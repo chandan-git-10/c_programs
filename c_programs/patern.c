@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-	int i=0,j=0,num=0,sum=0,backslash=92;
+	int i=0,j=0,num=0,sum=0;
 	printf("Enter the num:\n");
 	scanf("%d",&num);
 	for(i=0;i<=num;i++,printf("\n"))
@@ -10,7 +10,7 @@ int main()
 		{
 			sum=i+j;
 			if (i==j)
-				printf("%c",backslash);
+				printf("\\");
 			else if (sum==num)
 				printf(" / ");
 			else printf(" * ");
