@@ -4,7 +4,7 @@ void main()
 {
 	int ch;
 	FILE *fp;
-	if((fp=fopen("myfile","w"))==NULL)
+	if((fp=fopen("myfile1.txt","w"))==NULL)
 	{
 		printf("Erro in opening file");
 		exit(1);
