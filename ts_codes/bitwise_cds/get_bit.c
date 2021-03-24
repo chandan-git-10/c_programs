@@ -16,9 +16,9 @@ void main()
 	scanf("%d %d",&data,&bit_pos);
 	res=(data>>bit_pos-1)&1;
 	printf("nth bit postion data=%d\n",res);
-	printf("input data");
+	printf("input data\t");
 	print_bin(data);
-	printf("output data");	
+	printf("output data\t");	
 	print_bin(res);
 }
 
