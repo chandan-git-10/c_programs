@@ -21,7 +21,11 @@ void main()
 	while(1)
 	{
 	printf("1.add_at_end 2.add_at_beg 3.delete_at_end 4.delete_at_beg\n");
+<<<<<<< HEAD
         printf("5.display 6.quit 7.delete_alrt 8.reverse_list\n");
+=======
+        printf("	5.display 6.quit 7.delete_alrt()\n");
+>>>>>>> daec641df470e26860601c4ba41f196c9eee53d3
 	printf("enter the choice:");
 	scanf("%d",&choice);
 	switch(choice)
@@ -45,7 +49,10 @@ void main()
 			break;
 		case 7: delete_alrt();
 			break;
+<<<<<<< HEAD
 		case 8: rev_list();
+=======
+>>>>>>> daec641df470e26860601c4ba41f196c9eee53d3
 		default:
 			printf("Please enter the valid choice\n");
 	}
@@ -164,6 +171,7 @@ void delete_alrt()
 
 	}
 }
+<<<<<<< HEAD
 
 void rev_list()
 {
@@ -188,4 +196,6 @@ void rev_list()
 }
 
 
+=======
+>>>>>>> daec641df470e26860601c4ba41f196c9eee53d3
 
