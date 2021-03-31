@@ -15,18 +15,15 @@ void delete_at_end();
 void delete_at_beg();
 void delete_alrt();
 void rev_list();
+void find_mid();
 void main()
 {
 	int choice;
 	while(1)
 	{
 	printf("1.add_at_end 2.add_at_beg 3.delete_at_end 4.delete_at_beg\n");
-<<<<<<< HEAD
-        printf("5.display 6.quit 7.delete_alrt 8.reverse_list\n");
-=======
-        printf("	5.display 6.quit 7.delete_alrt()\n");
->>>>>>> daec641df470e26860601c4ba41f196c9eee53d3
-	printf("enter the choice:");
+        printf("5.display 6.quit 7.delete_alrt 8.reverse_list 9.find_mid\n");
+        printf("enter the choice:");
 	scanf("%d",&choice);
 	switch(choice)
 	{
@@ -49,10 +46,10 @@ void main()
 			break;
 		case 7: delete_alrt();
 			break;
-<<<<<<< HEAD
+		case 9: find_mid();
+			break;
 		case 8: rev_list();
-=======
->>>>>>> daec641df470e26860601c4ba41f196c9eee53d3
+			break;
 		default:
 			printf("Please enter the valid choice\n");
 	}
@@ -171,7 +168,7 @@ void delete_alrt()
 
 	}
 }
-<<<<<<< HEAD
+
 
 void rev_list()
 {
@@ -196,6 +193,22 @@ void rev_list()
 }
 
 
-=======
->>>>>>> daec641df470e26860601c4ba41f196c9eee53d3
+void find_mid()
+{
+	struct node *fptr=root,*sptr=root;
+	if (root==NULL)
+	{
+		printf("list is empty\n");
+	}
+	else
+	{
+		while(fptr->link!=NULL)
+		{
+			fptr=fptr->link->link;
+			sptr=sptr->link;
+		}
+		printf("the middle node is data=%d and link=%p\n",sptr->data,sptr->link);
+
+	}
+}
 
