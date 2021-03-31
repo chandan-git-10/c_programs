@@ -14,12 +14,14 @@ void display();
 void delete_at_end();
 void delete_at_beg();
 void delete_alrt();
+void rev_list();
 void main()
 {
 	int choice;
 	while(1)
 	{
-	printf("1.add_at_end 2.add_at_beg 3.delete_at_end 4.delete_at_beg 5.display 6.quit\n");
+	printf("1.add_at_end 2.add_at_beg 3.delete_at_end 4.delete_at_beg\n");
+        printf("5.display 6.quit 7.delete_alrt 8.reverse_list\n");
 	printf("enter the choice:");
 	scanf("%d",&choice);
 	switch(choice)
@@ -41,6 +43,9 @@ void main()
 			break;
 		case 6: exit(1);
 			break;
+		case 7: delete_alrt();
+			break;
+		case 8: rev_list();
 		default:
 			printf("Please enter the valid choice\n");
 	}
@@ -141,11 +146,46 @@ void delete_at_beg()
 
 void delete_alrt()
 {
-	struct node *temp=NULL;
-	if(root=NULL)
+	struct node *prev=root,*curr=root->link;
+	if(root==NULL)
 	{
 		printf("linked list is empty\n");
 	}
 	else 
 	{
+		while(prev->link !=NULL)
+		{
+			prev->link=curr->link;
+			free(curr);
+			prev=prev->link;
+			if(prev->link!=NULL)
+				curr=prev->link;
+		}
+
+	}
+}
+
+void rev_list()
+{
+	struct node *prev,*curr,*next;
+	prev=NULL,curr=root;
+	if(root==NULL)
+	{
+		printf("list is empty\n");
+	}
+	else
+	{
+		while(curr!=NULL)
+		{
+			next=curr->link;
+			curr->link=prev;
+			prev=curr;
+			curr=next;
+			
+		}
+	}
+	root=prev;
+}
+
+
 
