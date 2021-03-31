@@ -55,7 +55,7 @@ void add_list1()
 	}
 	else
 	{
-		while(temp!=NULL)
+		while(temp->link!=NULL)
 		{
 			temp=temp->link;
 		}
@@ -78,7 +78,7 @@ void add_list2()
         }
         else
         {
-                while(temp!=NULL)
+                while(temp->link!=NULL)
                 {
                         temp=temp->link;
                 }
@@ -90,20 +90,20 @@ void add_list2()
 void merge_list()
 {
 
-	struct node *temp=root1;
+	struct node *temp1=root1,*temp2=root2;
 	if(root1==NULL)
 	{
 		printf("list1 is empty,no merge needed printing list2:");
-		root1=root2;
+		temp1=temp2;
 		display(root1);
 	}
 	else 
 	{
-		while(temp!=NULL)
+		while(temp1->link!=NULL)
 		{
-			temp=temp->link;
+			temp1=temp1->link;
 		}
-		temp->link=root2;
+		temp1->link=temp2;
 		display(root1);
 	}
 }
@@ -120,6 +120,8 @@ void display(struct node *temp)
 		while(temp!=NULL)
 		{
 			printf("%d-->",temp->data);
+			temp=temp->link;
 		}
+		printf("\n");
 	}
 }
