@@ -16,6 +16,7 @@ void delete_at_beg();
 void delete_alrt();
 void rev_list();
 void find_mid();
+void sort_ll();
 void main()
 {
 	int choice;
@@ -23,6 +24,7 @@ void main()
 	{
 	printf("1.add_at_end 2.add_at_beg 3.delete_at_end 4.delete_at_beg\n");
         printf("5.display 6.quit 7.delete_alrt 8.reverse_list 9.find_mid\n");
+	printf("10.sort_ll\n");
         printf("enter the choice:");
 	scanf("%d",&choice);
 	switch(choice)
@@ -50,6 +52,8 @@ void main()
 			break;
 		case 8: rev_list();
 			break;
+		case 10: sort_ll();
+			 break;
 		default:
 			printf("Please enter the valid choice\n");
 	}
@@ -212,3 +216,33 @@ void find_mid()
 	}
 }
 
+void sort_ll()
+{	
+	int temp;
+	struct node *prev=root,*curr;
+	if(root==NULL)
+	{
+		printf("list is empty\n");
+	}
+	else 
+	{
+	
+		while(prev!=NULL)
+		{
+			curr=prev->link;
+			while(curr!=NULL)
+			{
+				if(prev->data > curr->data)
+				{
+					temp=prev->data;
+					prev->data=curr->data;
+					curr->data=temp;			
+				}
+				curr=curr->link;
+
+			}
+			prev=prev->link;
+		}
+	
+	}
+}
