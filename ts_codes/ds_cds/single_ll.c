@@ -17,14 +17,16 @@ void delete_alrt();
 void rev_list();
 void find_mid();
 void sort_ll();
+void len();
+void srch_dt(int);
 void main()
 {
-	int choice;
+	int choice,num;
 	while(1)
 	{
 	printf("1.add_at_end 2.add_at_beg 3.delete_at_end 4.delete_at_beg\n");
         printf("5.display 6.quit 7.delete_alrt 8.reverse_list 9.find_mid\n");
-	printf("10.sort_ll\n");
+	printf("10.sort_ll 11.len 12.srch_dt\n");
         printf("enter the choice:");
 	scanf("%d",&choice);
 	switch(choice)
@@ -53,6 +55,12 @@ void main()
 		case 8: rev_list();
 			break;
 		case 10: sort_ll();
+			 break;
+		case 11: len();
+			 break;
+		case 12:printf("enter num to srch in ll:");
+			scanf("%d",&num);
+			srch_dt(num);
 			 break;
 		default:
 			printf("Please enter the valid choice\n");
@@ -244,5 +252,47 @@ void sort_ll()
 			prev=prev->link;
 		}
 	
+	}
+}
+void len()
+{
+	int count=0;
+	struct node *temp=root;
+	if (root==NULL)
+	{
+		printf("list is empty\n");
+	}
+	else
+	{
+		while(temp!=NULL)
+		{
+			temp=temp->link;
+			count++;
+		}
+	}
+	printf("lenght of ll: %d\n",count);
+}
+
+
+void srch_dt(int num)
+{
+	int count=1;
+	struct node *temp=root;
+	if(root==NULL)
+	{
+		printf("list is empty\n");
+	}
+	else
+	{
+		while(temp!=NULL)
+		{
+			if(temp->data == num)
+			{
+				break;
+			}
+			count++;
+			temp=temp->link;
+		}
+		printf("data matched:%d at pos:%d\n",temp->data,count);
 	}
 }
