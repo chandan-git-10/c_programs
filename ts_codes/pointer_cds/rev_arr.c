@@ -7,7 +7,7 @@ void main()
 	printf("array elements:");
 	for(i=0;i<len;i++)
 	{
-		printf("%d",*ptr+i);
+		printf("%d",*(ptr+i));
 	}
 	printf("\n");
 	for(i=0,j=len-1;i<j;i++,j--)
@@ -19,7 +19,7 @@ void main()
 	printf("array after rev:");
 	for(i=0;i<len;i++)
 	{
-		printf("%d",*ptr+i);
+		printf("%d",*(ptr+i));
 	}
 	printf("\n");
 }
