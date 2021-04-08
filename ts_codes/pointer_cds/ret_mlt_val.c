@@ -16,7 +16,7 @@ void main()
 {
 	int i;
 	int arr[len],*ptr=arr;
-	ret_arr(ptr);
+	ptr=ret_arr(ptr);
 	printf("array elements:");
 	for(i=0;i<len;i++)
 	{
