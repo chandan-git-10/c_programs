@@ -1,5 +1,4 @@
 #include<stdio.h>
-int fact=1;
 int factorial(int);
 void main()
 {
@@ -7,7 +6,7 @@ void main()
 	printf("Enter the data:");
 	scanf("%d",&data);
 	res=factorial(data);
-	printf("foctoral of %d is %d\n",data,res);
+	printf("factoral of %d is %d\n",data,res);
 }
 
 int factorial(int data)
