@@ -9,7 +9,7 @@ void main()
 		printf("ERR:Cannot open file\n");
 		exit(1);
 	}
-	printf("enter the charecter:");  //press cntrl+Z or cntrl+D for eof signal.
+	printf("enter the data:");  //press cntrl+Z or cntrl+D for eof signal.
 	while((ch=getchar())!=EOF)
 	{
 		fputc(ch,fp);
